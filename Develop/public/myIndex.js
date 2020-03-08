@@ -23,13 +23,9 @@ app.get('/notes', function (req, res) {
 
 })
 
-app.get('/*', function (req, res) {
-    res.sendFile(path.join(__dirname, './index.html'))
-    // res.json(data)
-})
 
 app.get('/api/notes', function (req, res) {
-    // res.json(data);
+    res.json(data);
     
 })
 
@@ -40,6 +36,10 @@ app.post('/api/notes', function (req, res) {
     })
 })
 
+app.get('/*', function (req, res) {
+    res.sendFile(path.join(__dirname, './index.html'))
+    // res.json(data)
+})
 
 // app.use(express.bodyParser());
 // app.post('/notes', function(req, res) {
